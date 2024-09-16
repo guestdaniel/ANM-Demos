@@ -11,6 +11,14 @@
 % low-threshold high-spontaneous rate (HSR) fiber, (2) a medium-threshold
 % medium-spontaneous-rate (MSR) fiber, and (3) a high-threshold low-
 % spontaneous-rate fiber.
+%
+% A paper with good examples of mammalian auditory-nerve rate-level
+% functions is:
+%
+% Sachs, M. B., and Abbas, P. J. (1974). “Rate versus level functions for 
+% auditory-nerve fibers in cats: tone-burst stimuli,” The Journal of the 
+% Acoustical Society of America, 56, 1835–1847. doi:10.1121/1.1903521
+
 
 % Select parameters
 level_low = 0.0;    % dB SPL
