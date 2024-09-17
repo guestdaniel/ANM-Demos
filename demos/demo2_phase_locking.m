@@ -13,7 +13,7 @@
 %
 % Here, we'll measure vector strength for a pure tone at CF at a constant
 % overall level of 50 dB SPL in a high-spontaneous-rate fiber.
-
+%
 % Some background reading is provided:
 %
 % Rose, J. E., Brugge, J. F., Anderson, D. J., and Hind, J. E. (1967). 
