@@ -8,6 +8,7 @@ and unzip it somewhere on your MATLAB path. Then, navigate to the demo of
 interest in the `demos` folder.
 
 # Demo list
+- Introduction (`demo0_introduction.m`)
 - Rate-level functions (`demo1_rate_level_functions.m`)
 - Phase locking (`demo2_phase_locking.m`)
 - Population neurogram (`demo3_population_neurogram.m`)
