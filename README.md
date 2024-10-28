@@ -10,6 +10,7 @@ interest in the `demos` folder.
 # Demo list
 - Rate-level functions (`demo1_rate_level_functions.m`)
 - Phase locking (`demo2_phase_locking.m`)
+- Population neurogram (`demo3_population_neurogram.m`)
 
 # Reference list
 Code in these demos relies on work and code first described in:
