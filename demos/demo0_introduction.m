@@ -28,17 +28,20 @@ fs = 100e3;  % Hz
 % stimulus for auditory research. There's a few key things to keep in mind:
 % 
 % - Typically, frequencies in the range of 20 Hz–20 kHz are used in human
-%   auditory research, with frequencies in the 0.5-8 kHz range being most
-%   typical. 
+%   auditory research (because these are the limits of human hearing!), 
+%	with frequencies in the 0.5-8 kHz range being most typical (most energy
+%   in speech will be found within this range).
 % - The duration needs to be long enough to elicit a meaningful response
-%   (i.e., > few ms), but simulations longer than a few seconds may be slow.
+%   (i.e., > few ms), but simulations longer than a few seconds may be slow
+%	or unwieldly to look at.
 % - We also have to ramp our stimulus to avoid sudden changes in pressure
 %   or discontinuities at the onset/offset of the stimulus. 
 % - Finally, we need to scale the stimulus to have energy in a range that
 %   is physiologically meaningful: stimuli below about -10–0 dB SPL will not
 %   elicit a response at most frequencies, whereas sound levels above 90 dB
-%   SPL or so could even damage the system under investigation. Thus, the
-%   range of -10–90 dB SPL is probably where you want to stay.
+%   SPL or so could even damage the system under investigation, and so are 
+%   difficult to simulate. Thus, the range of -10–90 dB SPL is probably
+%   where you want to stay.
 %
 % We will choose appropriate parameters below. For a more general treatment
 % of sinusoids, see https://ccrma.stanford.edu/~jos/st/Sinusoids.html.
@@ -54,8 +57,8 @@ t = 0.0:(1/fs):(dur - 1/fs);
 % Next, we synthesize the sound-pressure waveform, pass it to a ramping
 % function, and then scale the output to the requested sound level.
 p = sin(2*pi*freq*t);
-p = cosine_ramp(p, dur_ramp, fs);
 p = 20e-6 * 10^(level/20.0) * sqrt(2) * p;
+p = cosine_ramp(p, dur_ramp, fs);
 
 % Finally, we can plot the signal!
 figure;
@@ -205,7 +208,7 @@ freqs = exp(linspace(log(cf/1.5), log(cf*1.5), 7));  % Hz, even increments
 % Loop over each level, synthesize acoustic waveform, and simulate response
 resps = cell(length(freqs), 1);
 for ii = 1:length(freqs)
-	% Synthesize waveform (note we use a different level on each iteration)
+	% Synthesize waveform (note we use a different frequency on each iteration)
 	stim = quick_tone(freq=freqs(ii), dur=dur, dur_ramp=dur_ramp, level=level, fs=fs);
 
 	% Generate model response
